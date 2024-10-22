@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'global.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+</head>
+<body>
+    <h1>Testing</h1>
+    <p>Learning Django syntx</p>
+    
+    <h2>Hello my name is {{name}} anf I am {{age}} years old.</h2>
+
+    {% with newname='Nice'%}
+    <h3>My new name is {{newname}}</h3>
+    {% endwith %}
+
+    <h1>Displaying data from the model</h1>
+    <ul>
+    {% for x in mymembers %}
+    {% if x.phone > 1000 and x.joined_data|date:"Y-m-d" > "2024-09-10" %}
+      <li> <h3>{{x.firstname}} is old <h3></li>
+    {% else %}
+       <li> <h3>{{x.firstname}} is young <h3></li>
+    {% endif %}
+    {%endfor%}
+
+    {% for x in mymembers %}
+    <li
+      {% if forloop.first %}
+        style='background-color:lightblue;'
+      {% endif %}>{{ x }}</li>
+    {% endfor %}
+    <ul>
+
+    
+{% comment %}
+  <h1>Welcome ladies and gentlemen</h1>
+{% endcomment %}
+    
+<h1>Welcome{# Everyone#}</h1>
+</body>
+</html>
+

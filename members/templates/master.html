@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+
+{% comment %} commented code is use to add bootstrap5 {% endcomment %}
+<html>
+<head>
+  <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'mystyles.css' %}">
+
+  <title>{% block title %}{% endblock %}</title>
+  {% comment %} {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %} {% endcomment %}
+</head>
+<body>
+
+  {% comment %} <div class="container">
+    <ul class="nav bg-info">
+      <li class="nav-item">
+        <a class="nav-link link-light" href="/">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link link-light" href="/members">MEMBERS</a>
+      </li>
+    </ul> {% endcomment %}
+  
+<div class="topnav">
+  <a href="/">HOME</a> |
+  <a href="/members">MEMBERS</a>
+</div>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
+
